@@ -4,7 +4,7 @@ import func
 
 class AthleteList(list):
 	def __init__(self, a_name, a_dob=None, a_times=[]):
-		list.__init__([])
+		list.__init__([]) # 初始化类
 		self.name = a_name
 		self.dob = a_dob
 		self.extend(a_times)
@@ -27,5 +27,5 @@ def get_coach_data3(filename):
 		return None
 
 
-james = get_coach_data3("ch6_data/james2.txt")
-print(james.name + "'s fastest times are " + str(james.top3()))
+# james = get_coach_data3("ch6_data/james2.txt")
+# print(james.name + "'s fastest times are " + str(james.top3()))

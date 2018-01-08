@@ -36,7 +36,7 @@ def put_to_store(files_list):
 def push_from_store():
 	all_athletes = dict()
 	try:
-		with open('athletes,pickle', 'rb') as athf:
+		with open('athletes.pickle', 'rb') as athf:
 			all_athletes = pickle.load(athf)
 	except IOError as ioerr:
 		print("file error:" + ioerr)
@@ -44,4 +44,12 @@ def push_from_store():
 
 the_files = ["ch6_data/james2.txt", "ch6_data/julie2.txt", "ch6_data/mikey2.txt", "ch6_data/sarah2.txt"]
 data = put_to_store(the_files)
-print(data)
+# print(data)
+print("data:")
+for each_ath in data:# each_ath的值为data的键值（姓名）
+	print(data[each_ath].name + "'s birthday is " + data[each_ath].dob)
+
+data_copy = push_from_store()
+print("data_copy:")
+for each_ath in data_copy:
+	print(data_copy[each_ath].name + "'s birthday is " + data_copy[each_ath].dob)
